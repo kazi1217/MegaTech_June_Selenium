@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" parallel="methods" thread-count="5">
+
+
+    <test name="kazi">
+        <classes>
+            <class name="com.megatechs.selenium.Guru99AlertTwo"/>
+            <class name="com.megatechs.selenium.nopCommerceTwo"/>
+        </classes>
+    </test>
+</suite>
