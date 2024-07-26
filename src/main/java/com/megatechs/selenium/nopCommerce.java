@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -21,9 +22,9 @@ public class nopCommerce {
     driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
     driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     driver.manage().window().maximize();
-}
 
-    public void alertDemo() throws InterruptedException {
+
+
         Actions actions = new Actions(driver);
         WebElement menuOptions = driver.findElement(By.xpath("//a[text()='Computers '][1]"));
         actions.moveToElement(menuOptions).perform();
@@ -31,9 +32,7 @@ public class nopCommerce {
         WebElement desktop = driver.findElement(By.xpath("//a[text()='Desktops '][1]"));
         desktop.click();
         Thread.sleep(2000);
-}
 
-        public void demoMethod() throws InterruptedException {
         WebElement searchButton = driver.findElement(By.xpath("//input[@class='search-box-text ui-autocomplete-input' and @name='q']"));
         searchButton.sendKeys("Apple MacBook");
         WebElement searchClickButton = driver.findElement(By.xpath("//button[@class='button-1 search-box-button']"));
@@ -60,6 +59,21 @@ public class nopCommerce {
         WebElement lastName = driver.findElement(By.xpath("//input[@id='LastName']"));
         lastName.sendKeys("Rahman");
         Thread.sleep(2000);
+
+            WebElement drop= driver.findElement(By.xpath("//select[@name='DateOfBirthDay']"));
+            Select dropdown = new Select(drop);
+            Select SelectDropDown = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']")));
+            Thread.sleep(2000);
+            SelectDropDown.selectByVisibleText("17");
+          // SelectDropDown.selectByValue("10");
+          // Thread.sleep(7000);
+          //SelectDropDown.selectByIndex(5);
+            //Thread.sleep(7000);
+
+            Select DateOfBirthMonth = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthMonth']")));
+            DateOfBirthMonth.selectByVisibleText("December");
+            Select DateOfBirthYear = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthYear']")));
+            DateOfBirthYear.selectByVisibleText("1988");
 
         WebElement email = driver.findElement(By.xpath("//input[@id='Email']"));
         email.sendKeys("kazi1217tanu@gmail.com");
